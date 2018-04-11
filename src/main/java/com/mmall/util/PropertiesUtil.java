@@ -17,7 +17,7 @@ public class PropertiesUtil {
     private static Properties properties;
 
     static{
-        String fileName = "mmall_properties";
+        String fileName = "mmall.properties";
         properties = new Properties();
         try {
             properties.load(new InputStreamReader(PropertiesUtil.class.getClassLoader().getResourceAsStream(fileName),"UTF-8"));
