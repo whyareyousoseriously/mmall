@@ -14,6 +14,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -39,7 +40,7 @@ public class ProductManageController {
     @Autowired
     private IFileService iFileService;
 
-    @RequestMapping("save.do")
+    @RequestMapping(value = "save.do",method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse productSave(HttpSession session, Product product){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
@@ -56,7 +57,7 @@ public class ProductManageController {
     }
 
 
-    @RequestMapping("set_sale_status.do")
+    @RequestMapping(value = "set_sale_status.do",method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse setSaleStatus(HttpSession session, Integer productId,Integer status){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
@@ -71,7 +72,7 @@ public class ProductManageController {
         }
     }
 
-    @RequestMapping("detail.do")
+    @RequestMapping(value = "detail.do",method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse getDetail(HttpSession session, Integer productId){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
@@ -87,9 +88,9 @@ public class ProductManageController {
         }
     }
 
-    @RequestMapping("list.do")
+    @RequestMapping(value = "list.do",method = RequestMethod.GET)
     @ResponseBody
-    public ServerResponse getList(HttpSession session, @RequestParam(value = "pageNume",defaultValue = "!") int pageNum,
+    public ServerResponse getList(HttpSession session, @RequestParam(value = "pageNume",defaultValue = "1") int pageNum,
                                   @RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user ==null){
@@ -104,10 +105,10 @@ public class ProductManageController {
         }
     }
 
-    @RequestMapping("search.do")
+    @RequestMapping(value = "search.do",method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse productSearch(HttpSession session, String productName,Integer productId,
-                                        @RequestParam(value = "pageNume",defaultValue = "!") int pageNum,
+                                        @RequestParam(value = "pageNume",defaultValue = "1") int pageNum,
                                         @RequestParam(value = "pageSize",defaultValue = "10") int pageSize){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user ==null){
@@ -122,7 +123,7 @@ public class ProductManageController {
         }
     }
 
-    @RequestMapping("upload.do")
+    @RequestMapping(value = "upload.do",method = RequestMethod.GET)
     @ResponseBody
     public ServerResponse upload(HttpSession session,@RequestParam(value="upload_file",required = false) MultipartFile file, HttpServletRequest request){
         User user = (User)session.getAttribute(Const.CURRENT_USER);
@@ -145,7 +146,7 @@ public class ProductManageController {
     }
 
 
-    @RequestMapping("richtext_img_upload.do")
+    @RequestMapping(value = "richtext_img_upload.do",method = RequestMethod.GET)
     @ResponseBody
     public Map richtextImgUpload(HttpSession session, @RequestParam(value="upload_file",required = false) MultipartFile file,
                                  HttpServletRequest request, HttpServletResponse response){
