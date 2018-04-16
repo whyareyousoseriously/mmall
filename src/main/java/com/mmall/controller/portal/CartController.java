@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  * Created by power on 2018/4/14.
  */
 @Controller
-@RequestMapping("/cart/")
+@RequestMapping("/cart")
 public class CartController {
     @Autowired
     private ICartService iCartService;

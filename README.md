@@ -8,4 +8,6 @@
 &emsp;&emsp;2018-4-14<br>
 &emsp;&emsp;&emsp;&emsp;注意:在进行计算或对账的时候用BigDecimal的String构造器,可以解决商业计算中的精度问题<br>
 &emsp;&emsp;&emsp;&emsp;进行:购物车相关接口的完成<br>
+&emsp;&emsp;2018-4-16<br>
+&emsp;&emsp;&emsp;&emsp;进行:购物车相关接口的测试完成<br>
 

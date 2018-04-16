@@ -51,8 +51,7 @@ public class ICartServiceImpl implements ICartService{
             cart.setQuantity(count);
             cartMapper.updateByPrimaryKeySelective(cart);
         }
-        CartVo cartVo = this.getCartVoLimit(userId);
-        return ServerResponse.createBySuccess(cartVo);
+        return this.list(userId);
 
     }
     public ServerResponse<CartVo> update(Integer userId,Integer productId,Integer count){
@@ -64,8 +63,7 @@ public class ICartServiceImpl implements ICartService{
             cart.setQuantity(count);
         }
         cartMapper.updateByPrimaryKey(cart);
-        CartVo cartVo = this.getCartVoLimit(userId);
-        return ServerResponse.createBySuccess(cartVo);
+        return this.list(userId);
 
     }
     public ServerResponse<CartVo> deleteProduct(Integer userId,String productIds){
