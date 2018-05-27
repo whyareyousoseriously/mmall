@@ -10,4 +10,9 @@
 &emsp;&emsp;&emsp;&emsp;进行:购物车相关接口的完成<br>
 &emsp;&emsp;2018-4-16<br>
 &emsp;&emsp;&emsp;&emsp;进行:购物车相关接口的测试完成<br>
-
+&emsp;&emsp;2018-4-18<br>
+&emsp;&emsp;&emsp;&emsp;进行:收货管理模块接口的完成<br>
+&emsp;&emsp;&emsp;&emsp;进行:收货管理模块接口的测试<br>
+&emsp;&emsp;2018-4-21<br>
+&emsp;&emsp;&emsp;&emsp;进行:支付宝模块的完成<br>
+&emsp;&emsp;&emsp;&emsp;
